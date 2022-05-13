@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>CROSS MUSIC</h1>
+    <div class="music-container">
+      <div class="music-info">
+        <h3 id="title">Frank Zappa - The Torture Never Stops</h3>
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+      </div>
+
+      <audio
+        id="audio"
+        src="music/Frank Zappa - The Torture Never Stops.mp3"
+      ></audio>
+
+      <div class="img-container">
+        <img
+          src="posters/Frank Zappa - The Torture Never Stops.jpg"
+          alt="music-cover"
+          id="cover"
+        />
+      </div>
+
+      <div class="navigation">
+        <button id="prev" class="action-btn">
+          <img src="posters/svg/rewind-button.png" alt="prev" />
+        </button>
+        <button id="play" class="action-btn">
+          <img id="playPicture" src="posters/svg/play-button.png" alt="play" />
+        </button>
+        <button id="next" class="action-btn">
+          <img src="posters/svg/forward-button.png" alt="next" />
+        </button>
+      </div>
+
+      <div class="track-list-container">
+        <div class="track-list"></div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

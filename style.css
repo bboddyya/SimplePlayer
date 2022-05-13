@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(39, 62, 80, 1) 46%,
+    rgba(54, 78, 83, 1) 65%,
+    rgba(68, 110, 102, 1) 89%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Koulen", cursive;
+  color: aliceblue;
+  letter-spacing: 6px;
+  font-size: 60px;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: aliceblue;
+  font-size: 17px;
+}
+
+.music-container {
+  width: 800px;
+  min-height: 150px;
+  background: rgb(240, 232, 189);
+  background: linear-gradient(
+    180deg,
+    rgba(240, 232, 189, 1) 19%,
+    rgba(89, 68, 27, 1) 78%
+  );
+  box-shadow: 3px 8px 21px 27px rgba(7, 8, 8, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  margin: 200px 0;
+  z-index: 10;
+}
+
+.img-container {
+  position: relative;
+  width: 250px;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container img {
+  position: absolute;
+  width: inherit;
+  border-radius: 50%;
+  height: 250px;
+  left: 0;
+  bottom: 0;
+  object-fit: cover;
+
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  left: 35%;
+  border: none;
+  border-radius: 10px;
+}
+
+.action-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0 45px;
+  color: rgb(206, 205, 205);
+  cursor: pointer;
+}
+
+#play img {
+  width: 64px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#play:hover img {
+  opacity: 0.8;
+}
+
+#play:active img {
+  outline: 1px solid rgb(255, 255, 255);
+}
+
+#prev img {
+  width: 50px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#next img {
+  width: 50px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#prev:hover img {
+  opacity: 0.8;
+}
+
+#next:hover img {
+  opacity: 0.8;
+}
+
+#prev:active img {
+  outline: 1px solid rgb(255, 255, 255);
+}
+
+#next:active img {
+  outline: 1px solid rgb(255, 255, 255);
+}
+
+.music-info {
+  background: linear-gradient(
+    180deg,
+    rgba(240, 232, 189, 0.5) 19%,
+    rgba(89, 68, 27, 0.5) 78%
+  );
+  border-radius: 15px 15px 0 0;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 500px;
+  /* min-width: calc(100%-40px); */
+  opacity: 0;
+  transform: translateY(0%);
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.1s ease;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.progress-container {
+  background-color: white;
+  height: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.progress {
+  background-color: crimson;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
